@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FILM ***STAR*** GALORE</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+        <script src="jquery.zrssfeed.min.js" type="text/javascript"></script>
+
+
+        <script type="text/javascript">
+                $("document").ready(function(){
+                $("#onoff").click(function(){
+                $(".search2").slideToggle(2000);
+                $(".comment").slideToggle(1000);
+                 $(".se").slideToggle(2000);
+                });
+                });
+                </script>
+                
+                <script type="text/javascript">
+                    function searchq(){
+                        var searchTxt = $("input[name='search1']").val();
+                        $.post("searchf.php", {searchVal: searchTxt}, function(output){
+                            $("#output").html(output);
+                        });
+                    }
+            
+                </script>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style type="text/css">
+            .biotable tr td {border:solid 1px aqua; padding:1.5px;
+                            margin:0px; width:120px; height:100px;
+                            border-radius:7px; background: scroll; 
+                            border-top-color:orange; border-right-color:silver; border-bottom-color:greenyellow; border-left-color:silver;
+                           box-shadow: 0px 0px 7px 1px rgba(37, 3, 3, 0.5);
+                            -moz-box-shadow: 0px 0px 7px 1px rgba(37, 3, 3, 0.5);
+                            -webkit-box-shadow: 0px 0px 7px 1px rgba(37, 3, 3, 0.5);}
+            
+           .biotable table{position: fixed; text-align: center;
+                          top:145px;left:267px; border-spacing:7px; box-shadow: 0px 200px 1000px 50px aquamarine; border-style: hidden}
+           
+           .img{border:0.5; height:100px; width:115px; border-radius:7px;}
+           .search{position:fixed; top: 75px; right: 310px;}
+           
+           #s{ width: 109px; position:fixed; top:75px; left:280px; height: 46px; border-radius: 5px; color:black; background: white;} 
+           #txt{width: 650px; height: 40px; border-radius: 5px; text-align: center; background:scroll}
+           
+           .header{position:absolute; height: 5px; top:-10px; left:300px; border: none; 
+                  box-shadow: 0px 2px 10px 5px #c0c0c0, inset 0px 2px 30px 5px tomato; border-radius: 5px;}
+           .b {position:absolute; top:15px; text-align: center; left:420px; font-family: inherit; color: salmon;}
+           .search2{position:absolute; left:25px; text-align: center; border:1px #c0c0c0; border-radius:5px; width:200px;
+                    box-shadow: 0px 5px 10px 5px #c0c0c0; padding:0px; top: 145px;}
+           .search2 td{border:1px solid #c0c0c0; border-radius: 5px; color: #000; background: wheat}
+           .comment{position:absolute; bottom:250px; left:27px; text-align: center; box-shadow: 0px 5px 10px 5px #c0c0c0;
+                     color: #000; border:1px #c0c0c0;}
+         
+           .se{position:fixed; top:310px; left:90px;}
+           #submit{position:fixed; bottom:180px; left:90px;}
+           #onoff{position: absolute; top: 90px; left: 100px; background: #c0c0c0;} 
+           #onoff input{color: mediumblue}
+          
+           #cmt{position:absolute; right:100px; top:140px;}
+		   #banner{position:absolute; right:480px; top:-25px}
+
+        </style>
+    </head>
+
+    <body>
+        
+        
+        <div id="onoff">
+            <input type="submit" width="15px" name="openclose" value="&DoubleUpDownArrow;&DoubleUpDownArrow;&DoubleUpDownArrow;">
+        </div>
+        <div class="b">
+            <table class="b">
+            <tr>
+                The Biography Page -------- 
+            </tr>
+            </table>
+        </div>        
+            <div id="banner">
+			<object width="300" height="100" data="flashbanner/bannerforbiographypage.swf"></object>			
+			</div>
+        </div>
+        <div class="header">
+            <table class ="header">
+            <tr><td><h4>FILM</h4></td>
+                <td><h2 style="color:red;">***STAR's***</h2></td>
+                <td><h4>GALORE</h4></td></tr>
+            </table>
+        </div>
+        
+        
+        
+        <div class="search">
+            <form id="search" method="POST" action="http://localhost/multimedia/moviestar_bio/public_html/se.php">
+                <input id="txt" type="text" name="search" placeholder="-----Search For Your Celebrity-----" onkeydown="searchq();"/>
+                <input id="s" type="submit" value="Search"/>
+            </form>
+        </div
+        
+        
+        
+        
+ 
+        <div id="output">
+               
+            </div>
+            
+            <div class="comment">
+                <table style="background: yellow">
+                    <form action="http://localhost/multimedia/moviestar_bio/public_html/celebscmt.php" method="POST">
+                    <th style="color:red">Comment Your Favourite</th>
+                    <Tr><td>Celebrity Name: </br><input type="text" name="name"></td></Tr>
+                    <Tr><td>Comment:</br><textarea cols="20" rows="5" name="comment" size="15px"></textarea></td></Tr> 
+                    <Tr><Td><input type="submit" name="submit" value="Submit"></td></tr>
+                    </form>
+                   </table>
+            
+            </div>
+         
+        <div id="cmt">
+        <a href="com.html"><input type ="button" value="Comment Section"></a>  
+        </div>
+            
+        <div class ='biotable'>
+            <table>
+                <tr>
+                    <td><a href="paul.html"><image class="img" src="http://localhost/multimedia/moviestar_bio/public_html/old_celebs/paul.jpg"></image></a></td>
+                    <td><a href="angelina.html"><image class="img" src="http://localhost/multimedia/moviestar_bio/public_html/old_celebs/angelina.jpg"></image></a></td>
+                    <td><a href="arnold.html"><image class="img" src="http://localhost/multimedia/moviestar_bio/public_html/old_celebs/arnold.jpg"></image></a></td>
+                    <td><a href="orlando.html"><image class="img" src="http://localhost/multimedia/moviestar_bio/public_html/old_celebs/orlando.jpg"></image></a></td>
+                    <td><a href="David Beckham.html"><image class="img" src="http://localhost/multimedia/moviestar_bio/public_html/old_celebs/beckham.jpg"></image></a></td> 
+                    <td><a href="Kristen Stewart.html"><image class="img" src="http://localhost/multimedia/moviestar_bio/public_html/old_celebs/kristen.jpg"></image></a></td>
+                
+                
+                </tr>
+                
+                <tr>
+                    <td><a href="Bryan.html"><image class="img" src="http://localhost/multimedia/moviestar_bio/public_html/old_celebs/bryan.jpg"></image></a></td>
+                    <td><a href="Britney.html"><image class="img" src="http://localhost/multimedia/moviestar_bio/public_html/old_celebs/britney.jpg"></image></td>
+                    <td><a href="Jakie.html"><image class="img" src="http://localhost/multimedia/moviestar_bio/public_html/old_celebs/jakiechan.jpg"></image></a></td>
+                    <td><a href="will smith.html"><image class="img" src="http://localhost/multimedia/moviestar_bio/public_html/old_celebs/willsmith.jpg"></image></a></td>
+                    <td><a href="sharapova.html"><image class="img" src="http://localhost/multimedia/moviestar_bio/public_html/old_celebs/sharapova.jpg"></image></a></td> 
+                    <td><a href="andy murray.html"><image class="img" src="http://localhost/multimedia/moviestar_bio/public_html/old_celebs/andymurray.jpg"></image><a/></td>
+                 
+                </tr>
+                
+                <tr>
+                    <td><a href="manny pacquiao.html"><image class="img" src="http://localhost/multimedia/moviestar_bio/public_html/old_celebs/manuelpaque.jpg"></image></a></td>
+                    <td><a href="aishwarya.html"><image class="img" src="http://localhost/multimedia/moviestar_bio/public_html/old_celebs/aishwaryarai.jpg"></image></a></td>
+                    <td><a href="pele.html"><image class="img" src="http://localhost/multimedia/moviestar_bio/public_html/old_celebs/pele.jpg"></image></a></td>
+                    <td><a href="james arthur.html"><image class="img" src="http://localhost/multimedia/moviestar_bio/public_html/old_celebs/jamesarthur.jpg"></image></a></td>
+                    <td><a href="nicole.html"><image class="img" src="http://localhost/multimedia/moviestar_bio/public_html/old_celebs/nicole.jpg"></image></a></td> 
+                    <td><a href="lewis hemilton.html"><image class="img" src="http://localhost/multimedia/moviestar_bio/public_html/old_celebs/lewishemilton.jpg"></image></a></td>
+                   
+                </tr>
+                
+                <tr>
+                    <td><a href="ronaldo.html"><image class="img" src="http://localhost/multimedia/moviestar_bio/public_html/old_celebs/ronaldo.jpg"></image></a></td>
+                    <td><a href="joey essex.html"><image class="img" src="http://localhost/multimedia/moviestar_bio/public_html/old_celebs/joeyessex.jpg"></image></a></td>
+                    <td><a href="susan boyle.html"><image class="img" src="http://localhost/multimedia/moviestar_bio/public_html/old_celebs/susanboyle.jpg"></image></a></td>
+                    <td><a href="victoria beckham.html"><image class="img" src="http://localhost/multimedia/moviestar_bio/public_html/old_celebs/victoria.jpg"></image></a></td>
+                    <td><a href="leonardo.html"><image class="img" src="http://localhost/multimedia/moviestar_bio/public_html/old_celebs/leonardo.jpg"></image></a></td> 
+                    <td><a href="miley cyrus.html"><image class="img" src="http://localhost/multimedia/moviestar_bio/public_html/old_celebs/miley.jpg"></image></a></td>
+                   
+                </tr>
+               
+                
+            </table>
+            
+        </div>
+       
+        
+    </body>
+    
+    
+</html>
+
+
+
